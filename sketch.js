@@ -55,6 +55,7 @@ class floor {
 let eye, screen, lig, objects, intensity = 250000000;
 
 function setup() {
+  pixelDensity(1);
   can = createCanvas(800,600);
   can.parent("can")
   eye = createVector(0, 0, 50);
@@ -67,7 +68,6 @@ function setup() {
   objects.push(new sphere(30, createVector(90, 215, 31), createVector(147, 250, 62)));
   objects.push(new floor());
   loadPixels();
-  pixelDensity(1);
   for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
       dir = screen[0].copy().add(screen[1].copy().sub(screen[0]).mult(j / width)).add(screen[3].copy().sub(screen[0]).mult(i / height)).sub(eye);
