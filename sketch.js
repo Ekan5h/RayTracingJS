@@ -67,7 +67,7 @@ function setup() {
   objects.push(new sphere(30, createVector(90, 215, 31), createVector(147, 250, 62)));
   objects.push(new floor());
   loadPixels();
-  let d = pixelDensity();
+  pixelDensity(1);
   for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
       dir = screen[0].copy().add(screen[1].copy().sub(screen[0]).mult(j / width)).add(screen[3].copy().sub(screen[0]).mult(i / height)).sub(eye);
